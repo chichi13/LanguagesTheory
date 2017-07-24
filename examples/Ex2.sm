@@ -1,0 +1,15 @@
+
+sum = 0
+
+print "Enter number (a): "
+read a
+
+print "Enter number (b): "
+read b
+
+print "Enter number (c): "
+read c
+
+sum = a + b * c
+
+print "Result is ", sum, "\n";
