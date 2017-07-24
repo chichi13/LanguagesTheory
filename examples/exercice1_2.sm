@@ -1,0 +1,22 @@
+//This script divides the number x by the number y until y equals 0, both numbers are given by the user
+//When y reaches 0 we skip the dividing part because it would cause an error
+
+print " This script will divide X by Y and will decrease Y by 1 each time until it reaches 0 where it will eventually stops. \n"
+print " Enter value of X : "
+read x
+print " Enter value of Y : "
+read y
+i=0
+while 1 do
+i=i+1
+	if y==0 then
+		break
+	end
+
+z=x/y
+y=y-1
+print x, " divided by  ", y+1, " equals ", z, "\n"
+end
+
+
+
