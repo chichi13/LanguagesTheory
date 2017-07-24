@@ -1,0 +1,17 @@
+# clean source
+
+# delete class files left at toplevel
+rm -f *.class
+# and intermediate (.j) files
+rm -f *.j
+
+
+rm -f sal/util/*.class
+rm -f sal/small/*.class
+rm -f sal/*.class
+
+# delete jar file
+rm -f b/small.jar
+
+# remove temp files left behind by jar
+rm -f b/*.tmp

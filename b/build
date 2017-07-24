@@ -1,0 +1,13 @@
+# build compiler
+
+# compile .java files
+javac -cp b/jasmin.jar sal/util/*.java sal/small/*.java
+javac sal/Library.java
+
+# create a new jar file
+cp b/jasmin.jar b/small.jar
+jar ufe b/small.jar sal.small.Main sal/util/*.class sal/small/*.class
+
+# delete temp files created by jar
+#rm -f jar*.tmp
+

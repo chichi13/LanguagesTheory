@@ -1,0 +1,6 @@
+# compile a small file
+
+java -jar b/small.jar -output . $1
+
+
+

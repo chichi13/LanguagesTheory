@@ -1,0 +1,8 @@
+# run a small program
+
+# compile .java files
+java -cp .:sal $1
+
+
+
+

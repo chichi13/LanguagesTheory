@@ -1,0 +1,12 @@
+# compile a small file
+
+java -jar b/small.jar -output . $1
+if [ $? -eq 0 ]
+then
+	# run program - strip extension - harder than in DOS!
+	BASENAME=`basename $1`
+	java -cp .:sal ${BASENAME%.*}
+else
+	echo "Errors in program"
+fi
+

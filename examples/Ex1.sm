@@ -1,0 +1,14 @@
+print "Enter a : \n"
+read a
+
+print "Enter b : \n"
+read b
+
+print "Enter c : \n"
+read c
+
+sum = 0
+sum = a + b + c
+
+print "result = "
+print sum,"\n"

@@ -1,0 +1,11 @@
+
+sum = 0
+x = 1
+
+while x != 0 do 
+	print "Enter number (end with 0): "
+	read x
+	sum = sum + x
+end
+
+print "Sum is ", sum, "\n";

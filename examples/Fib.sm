@@ -1,0 +1,29 @@
+
+// compute n'th fibonacci number fib(0) = 1, fib(1) =1, fib(2) = 2, 
+//                               fib(3) = 3, fib(4) = 5  etc
+
+print "Enter number(> 0) :"
+read n
+
+if n <= 0 then
+	print "Number must be > 0\n"
+end
+
+if n > 0 then
+
+	fiba = 1
+	fibb = 1
+	fn = 1
+	while fn < n do
+		t = fibb
+		fibb = fiba + fibb
+		fiba = t
+		fn = fn+1
+	end
+	
+	print "Fib(", n, ") = ", fibb, "\n"
+	
+end
+
+
+
