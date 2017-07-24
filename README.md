@@ -6,15 +6,11 @@
      `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
     ----------------------------------------------------------------- 
 
+made with : [C9](https://c9.io)
 
-Hi there! Welcome to Cloud9 IDE!
+**Hello, here is our project**
 
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
+We did these questions :
 
-Happy coding!
-The Cloud9 IDE team# LanguagesTheory
-
-///Hello, here is our project///
+- [x] Ex 0.2 : a + b * c
+- [x] Ex 1.2 : divided by
