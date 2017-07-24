@@ -14,3 +14,5 @@ We did these questions :
 
 - [x] Ex 0.2 : a + b * c
 - [x] Ex 1.2 : divided by
+- [ ] Ex 2 : not done yet
+- [ ] Ex 3 : not done yet
