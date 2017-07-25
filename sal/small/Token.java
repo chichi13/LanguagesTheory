@@ -52,7 +52,7 @@ public enum Token implements Patterned {
 
         IF("if"), THEN("then"),  ELSE("else"), ELIF,   END("end"),
 
-        WHILE("while"), DO("do"), UNTIL,
+        WHILE("while"), DO("do"), UNTIL("until"),
         
         
         PRINT("print"),
@@ -71,7 +71,7 @@ public enum Token implements Patterned {
 
         PLUS(RE.PLUS, "+"), MINUS(RE.MINUS, "-"), NEGATE(null,"-"), TIMES(RE.STAR, "*"), DIVIDE("/"), MOD("%"),
 
-		INCREMENT("++"),  DECREMENT("--"),
+		INCREMENT,  DECREMENT,
 		
         // punctuation ...
         SEMICOLON(";"), COMMA(","), LP(RE.LPAR, "("), RP(RE.RPAR, ")"),

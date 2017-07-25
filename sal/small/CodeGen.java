@@ -210,8 +210,18 @@ public class CodeGen {
                 setLabel(startLabel); 		//	jump to here exit conmdition isn't met
                 writeStatementCode(tree.child(1)); 		// contents of do/until loop
                 setLabel(continueLabel);	// 'continue' goes to just before the test
-                writeExpressionCode(tree.child(0), INT_TYPE);  		// code for test
-                ifFalse(startLabel);		// if test fails jump back to start
+				//System.out.print("hello\n");
+				
+				//!!!!! the following lines replace the lines
+				//!!!!!   	writeExpressionCode(tree.child(0), INT_TYPE);  	// code for test
+				//!!!!!	  	ifFalse(startLabel);		// if test fails jump back to start
+				//!!!!!  in the original version	
+                Tree<Token> test = tree.child(0);
+                if(test != null) {
+					writeExpressionCode(test, INT_TYPE);  	// code for test
+					ifFalse(startLabel);		// if test fails jump back to start
+				}
+				//!!!!!!!!! end of changes
                 setLabel(breakLabel);		// or continue here
                 endScope();
             }

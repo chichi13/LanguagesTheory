@@ -1,0 +1,6 @@
+x = 0
+
+do
+    x = x + 1
+    print "Result = ", x, "\n"
+until x == 10

@@ -115,13 +115,24 @@ public class Parse {
     public static Tree<Token> doStatement() {
         // The operations needed here a similar to 'while' above
         // 1. get the next token 
-        
+		Token tok = scan();
+
         // 2. declare an AST (Tree<Token>) object called body and 
         //    set it by calling statementList() and assigning the result to it.
+		
+		Tree<Token> body = statementList();
 		
         // 3.  your program has read everything upto either 'until' or 'end'
 		// check if the next token is UNTIL, if so skip it
 		// (see treatement of 'else' in 'if' statement above)
+		if(skipToken(UNTIL)) {
+			return list(UNTIL, expression(), body);
+		}
+		else{
+			mustBe(END);
+		}
+		return list(UNTIL, null, body);
+	
 		
 		// 4. if until is found, return the rest of the AST by using
 		//  return list(UNTIL, expression(), body)
@@ -135,9 +146,7 @@ public class Parse {
 		// a while statement with no test
 		
 		// 7. and delete the line 'return null;' after this one  
-		return null;
     }
-
 
     /**
      * Grammar rule {@code   readStatement   : 'read' name (, name)* }
@@ -282,7 +291,7 @@ public class Parse {
 			
 	
             case MINUS:     scan();	// step over operator
-							return list(token, term()); 
+							return list(NEGATE, term()); 
 
             default :       mustBe(IDENTIFIER, NUMBER, MINUS,
 									LP, TO_INT, TO_STR, LEN_STR);  // didn't find the start of an expression - there has to be one;
