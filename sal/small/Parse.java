@@ -175,12 +175,15 @@ public class Parse {
         scan(); // skip the word 'print'
         Tree<Token> printList = list(STATEMENTLIST);
         do { Tree<Token> printExpr;
-			if(currentToken() == STRING) {
+            /*			
+            if(currentToken() == STRING) {
 				printExpr = leaf(STRING, currentText());
 				scan();
 			} else {
 				printExpr = expression();
 			}
+            */
+            printExpr = expression();
 			printList.addChild(list(PRINT, printExpr));
         } while (skipToken(COMMA));
 
@@ -291,7 +294,18 @@ public class Parse {
 			
 	
             case MINUS:     scan();	// step over operator
-							return list(NEGATE, term()); 
+							return list(NEGATE, term());
+							
+			case TO_STR:    scan();
+			                return list(TO_STR, term());
+			                
+			case TO_INT:    scan();
+			                return list(TO_INT, term());
+			                
+			case LEN_STR:   scan();
+			                return list(LEN_STR, term());
+	        
+			//case STRING:    
 
             default :       mustBe(IDENTIFIER, NUMBER, MINUS,
 									LP, TO_INT, TO_STR, LEN_STR);  // didn't find the start of an expression - there has to be one;
