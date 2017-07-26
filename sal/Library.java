@@ -70,8 +70,8 @@ public class Library {
 		public static String right(String s, int n) {
 			if(n <= 0) return "";
 			int start = s.length() - n;
-			if(n < 0) n = 0;	// whole string
-			return s.substring(n);
+			if(start < 0) start = 0;	// whole string
+			return s.substring(start);
 		}
 		
 		public static int strCmp(String s1, String s2) 
