@@ -280,9 +280,9 @@ public class Parse {
                             return t;
             
 			
-            case IDENTIFIER:  t = leaf(token, value); break;
-
-
+            case IDENTIFIER:
+            case STRING:  t = leaf(token, value); break;
+            
             case NUMBER :	
 							{	if(value.charAt(0) == '#') {
 									// convert string after '#' to binary, then back to decimal as a string
@@ -292,8 +292,7 @@ public class Parse {
 								break; 
 							}
 			
-	
-            case MINUS:     scan();	// step over operator
+			case MINUS:     scan();	// step over operator
 							return list(NEGATE, term());
 							
 			case TO_STR:    scan();

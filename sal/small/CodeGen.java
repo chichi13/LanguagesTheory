@@ -162,7 +162,7 @@ public class CodeGen {
 				}
                 return;
 
-          case IF: {
+        	case IF: {
 				beginScope();	// start a scope to cover the whole if
                 Label endIf = newLabel("END IF");  // label for this end-if 
                 int pairs = tree.children();	// (test then code)+
@@ -203,7 +203,7 @@ public class CodeGen {
             return;
 
            
-          case UNTIL: {
+        	case UNTIL: {
                 beginScope();	
                 Label continueLabel = newLabel("NEXT LOOP");
                 Label breakLabel =    newLabel("EXIT LOOP");
@@ -291,17 +291,37 @@ public class CodeGen {
 				return INT_TYPE;	// assuming an int was intended!	
 			//!!! Insert String operations here !!!		
 			
-			}
+			case TO_STR:
+                if(child0IsString)  {
+                    break;
+                }
+                else
+                    emit(TO_STR);
+                    return STR_TYPE;
+                                        
+            case TO_INT:
+                if(!child0IsString)  {
+                	break;
+                }
+                else
+                    emit(TO_INT);
+                    return INT_TYPE;
+                    
+            case LEN_STR:
+            	if(!child0IsString)  {
+                	ErrorStream.log("Can't find lenght of an INT");
+                }
+        		else
+                	emit(LEN_STR);
+            		return INT_TYPE;
+            		
+		}
 			
 			// Now binary operations
 			boolean child1IsString = writeExpressionCode(tree.child(1));
 			
 			switch(token) {
-			
-			case TO_STR:
-				{
-					
-				}
+				
             case LE:
             case LT:
             case GE:

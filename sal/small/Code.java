@@ -133,7 +133,7 @@ static void libCall(Token t, String s) {
 
 		libCall(CONCAT, 	"concat(~~)~");		// ~ with be replaced with String
 		libCall(TO_STR, 	"toStr(I)~");		// ~ with be replaced with String
-		libCall(TO_INT, 	"toInt(I)~");		// ~ with be replaced with String
+		libCall(TO_INT, 	"toInt(~)I");		// ~ with be replaced with String
 		libCall(RIGHT_STR, 	"right(~I)~");		// ~ with be replaced with String
 		libCall(LEFT_STR, 	"left(~I)~");		// ~ with be replaced with String
 		libCall(FORMAT_STR, "format(~~)~");		// ~ with be replaced with String

@@ -1,0 +1,7 @@
+x$ = str 3
+f = int "85"
+k = length "hey"
+
+print x$,"\n"
+print f,"\n"
+print k,"\n"

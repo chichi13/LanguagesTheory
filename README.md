@@ -11,7 +11,7 @@ We did these questions :
 - [x] Ex 0.2 : a + b * c
 - [x] Ex 1.2 : divided by
 - [x] Ex 2.1 : DO UNTIL
-- [ ] Ex 3 : not done yet
+- [x] Ex 3 : not done yet
 
 
 Made with : [C9](https://c9.io)
