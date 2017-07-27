@@ -1,0 +1,6 @@
+
+b$ = "hello" + " lucas \n"
+
+print b$
+
+print length "2017 " + str 2105 + " " + 25 + "\nlucas "+ 5 * 2 + "\n"

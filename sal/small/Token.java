@@ -87,7 +87,7 @@ public enum Token implements Patterned {
 		PRINT_INT,		// print an int
 		READ_INT,		// read an int variable
 		READ_STR,		// read a string
-		CONCAT,			// join strings
+		CONCAT("concat"),// join strings
 		RIGHT_STR,		// select rightmost chars
 		LEFT_STR,		// leftmost chars
 		FORMAT_STR,		// format a string

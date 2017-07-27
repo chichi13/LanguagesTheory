@@ -361,7 +361,24 @@ public class CodeGen {
 			// String and integer operations
 			// !!!!! STRING OPS NOT YET COMPLETE !!!!
             
-            case PLUS:		
+            case PLUS: {
+                if (child0IsString || child1IsString) {
+                    if (!child1IsString) {
+                        emit(TO_STR);
+                    } else if (!child0IsString) {
+                        emit(SWAP);
+                        emit(TO_STR);
+                        emit(SWAP);
+                    }
+                    emit(CONCAT);    // comcat strings
+                    return STR_TYPE;
+                } else {
+                    emit(PLUS);
+                    return INT_TYPE;
+                }
+                    // otherwise the correct values are on top of the stac
+            }
+            
             case MINUS:
             case TIMES:
             case DIVIDE:
